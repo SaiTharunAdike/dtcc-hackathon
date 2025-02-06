@@ -24,14 +24,15 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - 3000:3000
+      - 80:3000
     logging:
       driver: "json-file"
       options:
         max-file: 1
         max-size: 10m
     healthcheck:
-      test: ["CMD-SHELL", "curl --fail http://127.0.0.1:3000/api/alive || exit 1"]
+      test:
+        ["CMD-SHELL", "curl --fail http://127.0.0.1:3000/api/alive || exit 1"]
       interval: 90s
       timeout: 30s
       retries: 5
