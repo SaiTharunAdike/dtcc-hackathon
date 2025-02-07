@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import typographyPlugin from "@tailwindcss/typography";
+import animationPlugin from "tailwindcss-animate";
 
 const config: Config = {
     darkMode: ["class"],
@@ -8,6 +10,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+	fontFamily: {
+		sans: ["var(--font-open-sans)"]
+	},
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -58,6 +63,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [typographyPlugin, animationPlugin],
 };
 export default config;
