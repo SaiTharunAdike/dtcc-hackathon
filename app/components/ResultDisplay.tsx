@@ -52,7 +52,7 @@ export default function ResultDisplay({
             <li key={index + 1}>{item}</li>
           ))}
         </ul>
-        <h3 className="m-0">Remedies</h3>
+        {results.REMEDIES.length > 0 && <h3 className="m-0">Remedies</h3>}
         <ul className="list-none">
           {results.REMEDIES.map((item, index) => (
             <li key={index + 1}>{item}</li>
